@@ -1,5 +1,3 @@
-# weather-pull-data
-
 # General Flow
 1. Data is retrieved from https://api.data.gov.sg
 2. A portion of the entire JSON is extracted, transformed and rewritten into a JSON with 4 fields: Area, Forecast, Start Time and End Time.
