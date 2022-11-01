@@ -28,9 +28,13 @@ The above command should output something like: Pulled 1234 weather records for 
 The above command should output a loooong list of weather records, with ID, Area, Forecast, StartTime and EndTime.
 
 `docker exec -ti weather-save-data bash`
+
 `/opt/mssql-tools/bin/sqlcmd -U SA`
-Enter the password.
+
+`<INPUT PASSWORD>`
+
 `SELECT * FROM weather_records;`
+
 `GO`
 
 The above string of commands should also output a loooong list of weather records (but not formatted nicely).
