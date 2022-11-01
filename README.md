@@ -17,11 +17,23 @@ Clone the repository. Open PowerShell (preferably with administrator rights), na
 
 `docker compose up --build --force-recreate -d`
 
-Once the containers are running, run the following command:
+# Verifying that each container is running properly:
+
+`docker logs weather-push-data`
+
+The above command should output something like: Pulled 1234 weather records for date: 01-11-2022.
 
 `docker logs --follow weather-push-data`
 
-The records within the DB should be displayed.
+The above command should output a loooong list of weather records, with ID, Area, Forecast, StartTime and EndTime.
+
+`docker exec -ti weather-save-data bash`
+`/opt/mssql-tools/bin/sqlcmd -U SA`
+Enter the password.
+`SELECT * FROM weather_records;`
+`GO`
+
+The above string of commands should also output a loooong list of weather records (but not formatted nicely).
 
 # Versions of Framework and Libraries used:
 1. docker-compose: 3
